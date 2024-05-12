@@ -1,0 +1,81 @@
+
+<div class="form">
+<%= form_with(model: kitten, local: true) do |form| %>
+    <% if kitten.errors.any? %>
+        <div id="error_explanation">
+            <h2><%= pluralize(kitten.errors.count, "error") %> prohibited this kitten from being saved:</h2>
+            <ul>
+                <% kitten.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                <% end %>
+            </ul>
+        </div>
+    <% end %>
+    <div class="fa">
+        <%= form.label :name %>
+        <%= form.text_field :name %>
+    </div>
+
+    <div class="fa">
+        <%= form.label :age %>
+        <%= form.number_field :age %>
+    </div>
+
+    <div class="fa">
+        <%= form.label :cuteness %>
+        <%= form.number_field :cuteness %>
+    </div>
+
+    <div class="fa">
+        <%= form.label :softness %>
+        <%= form.number_field :softness %>
+    </div>
+
+    <div class="fa">
+        <%= form.submit %>
+    </div>
+<% end %>
+</div>
+
+<style>
+    .form {
+        margin: 0 auto;
+        width: 80%;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        padding: 20px;
+    }
+    .fa {
+        margin: 10px 0;
+    }
+    .fa label {
+        display: block;
+        margin-bottom: 16px;
+    }
+    .fa input {
+        width: 90%;
+        padding: 5px;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+    }
+    .fa input[type="submit"] {
+        background-color: blue;
+        color: white;
+        padding: 5px 10px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    .fa input[type="submit"]:hover {
+        background-color: darkblue;
+    }
+    #error_explanation {
+        color: red;
+    }
+    #error_explanation ul {
+        list-style: none;
+    }
+    #error_explanation ul li {
+        margin: 5px 0;
+    }
+</style>

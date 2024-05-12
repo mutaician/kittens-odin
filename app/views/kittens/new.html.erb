@@ -1,0 +1,12 @@
+
+<h1>New Kitten</h1>
+
+<%= render 'form', kitten: @kitten%>
+<%= link_to 'Back', kittens_path, class: 'back' %>
+
+<style>
+    a.back{
+        font-size: 24px;
+        text-align: center;
+    }
+</style>

@@ -1,0 +1,48 @@
+<style>
+    h1 {
+        color: blue;
+    }
+    p {
+        color: green;
+    }
+    .container {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .kittencontainer {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        padding: 15px;
+    }
+    .kitten{
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+        background-color: khaki;
+    }
+    .kname {
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+</style>
+
+
+<div class="container">
+    <p><%= link_to 'New Kitten', new_kitten_path %></p>
+    <h1>Kittens</h1>
+
+    <div class="kittencontainer">
+        <% @kittens.each do |kitten| %>
+            <div class="kitten">
+                <p class="kname"><%= kitten.name %></p>
+                <p><%= link_to 'Show', kitten %></p>
+            </div>
+        <% end %>
+    </div>
+</div>
+
+

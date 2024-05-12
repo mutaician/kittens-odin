@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="kitten">
+        <h3><%= @kitten.name %></h3>
+        <p>Age: <%= @kitten.age %></p>
+        <p>Cuteness: <%= @kitten.cuteness %></p>
+        <p>Softness: <%= @kitten.softness %></p>
+    </div>
+
+    <div class="links">
+    <%= link_to 'Edit', edit_kitten_path(@kitten) %> 
+    <%= link_to 'Back', kittens_path %>
+    <%= link_to 'Delete', @kitten, data: { confirm: 'Are you sure?', turbo_method: :delete }, class: 'delete' %>
+    </div>
+</div>
+
+<style>
+    .container {
+        margin: 0 auto;
+        width: 80%;
+    }
+    .kitten {
+        border: 1px solid black;
+        border-radius: 5px;
+        padding: 10px;
+        width: 200px;
+        text-align: center;
+        background-color: khaki;
+        font-family: 'Roboto', sans-serif;
+    }
+    .links {
+        width: 200px;
+        display: flex;
+        justify-content: space-between;
+        margin-top: 16px;
+    }
+    .links a {
+        color: white;
+        background-color: blue;
+        padding: 5px 10px;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+    .links a:hover {
+        background-color: darkblue;
+    }
+    a.delete {
+        background-color: red;
+    }
+</style>

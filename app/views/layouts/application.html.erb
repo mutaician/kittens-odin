@@ -8,9 +8,37 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+      a{
+        text-decoration: none;
+        
+      }
+      body{
+        background-color: #f2f3f4;
+      }
+      .flash {
+        padding: 10px;
+        margin: 10px;
+        border-radius: 5px;
+      }
+      .notice {
+        background-color: #d4edda;
+        color: #155724;
+      }
+      .alert {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+    </style>
   </head>
 
   <body>
+    <h1><%= link_to 'Kittens Odin', root_path %></h1>
+    <% flash.each do |message_type, message| %>
+      <div class="flash <%= message_type %>">
+      <%= message %></div>
+    <% end %>
+
     <%= yield %>
   </body>
 </html>
